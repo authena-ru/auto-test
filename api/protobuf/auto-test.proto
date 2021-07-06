@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+package autotest;
+
+service AutoTestService {
+    rpc CheckTestingTask(CheckTestingTaskResponse) returns (CheckTestingTaskResponse) {}
+}
+
+message CheckTestingTaskRequest {
+    repeated Point points = 1;
+    GradeScale grade_scale = 2;
+}
+
+message Point {
+    repeated int32 variants = 1;
+    repeated int32 correct_variant_numbers = 2;
+}
+
+message GradeScale {
+    int32 excellent_lower_bound = 1;
+    int32 good_lower_bound = 2;
+    int32 satisfactory_lower_bound = 3;
+}
+
+message CheckTestingTaskResponse {
+    enum Grade {
+        EXCELLENT = 0;
+        GOOD = 1;
+        SATISFACTORY = 2;
+        UNSATISFACTORY = 3;
+    }
+    Grade grade = 1;
+    int32 percent = 2;
+}
+
