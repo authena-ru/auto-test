@@ -12,8 +12,8 @@ message CheckAttemptRequest {
 }
 
 message TestPoint {
-    repeated int32 variants = 1;
-    repeated int32 correct_variant_numbers = 2;
+    repeated int32 correct_variant_numbers = 1;
+    repeated int32 chosen_variant_numbers = 2;
 }
 
 message GradeScale {
