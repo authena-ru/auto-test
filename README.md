@@ -5,7 +5,7 @@ Auto testing microservice for Authena project
 This service checks attempts to pass testing tasks
 
 ### Input
-* Points — array of test points, point includes variants and correct variant numbers
+* Test points — array of test points, point includes variants and correct variant numbers
 * Grade scale — relationship between lower percentage and grade
 
 ### Output
