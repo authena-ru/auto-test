@@ -3,15 +3,15 @@ syntax = "proto3";
 package autotest;
 
 service AutoTestService {
-    rpc CheckTestingTask(CheckTestingTaskResponse) returns (CheckTestingTaskResponse) {}
+    rpc CheckAttemptToPassTestingTask(CheckAttemptRequest) returns (CheckAttemptResponse) {}
 }
 
-message CheckTestingTaskRequest {
-    repeated Point points = 1;
+message CheckAttemptRequest {
+    repeated TestPoint test_points = 1;
     GradeScale grade_scale = 2;
 }
 
-message Point {
+message TestPoint {
     repeated int32 variants = 1;
     repeated int32 correct_variant_numbers = 2;
 }
@@ -22,7 +22,7 @@ message GradeScale {
     int32 satisfactory_lower_bound = 3;
 }
 
-message CheckTestingTaskResponse {
+message CheckAttemptResponse {
     enum Grade {
         EXCELLENT = 0;
         GOOD = 1;
