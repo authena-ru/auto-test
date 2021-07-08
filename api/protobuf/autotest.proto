@@ -30,6 +30,7 @@ message CheckAttemptResponse {
         GOOD = 1;
         SATISFACTORY = 2;
         UNSATISFACTORY = 3;
+        NO_GRADE = 4;
     }
     Grade grade = 1;
     int32 percent = 2;
