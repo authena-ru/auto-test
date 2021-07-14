@@ -33,10 +33,10 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 			Name: "excellent_grade_when_better_than_lower_bound",
 			Attempt: service.Attempt{
 				TestPoints: []service.TestPoint{
-					service.NewTestPoint([]int{0, 1}, []int{0}),
-					service.NewTestPoint([]int{2}, []int{2}),
-					service.NewTestPoint([]int{3}, []int{3}),
-					service.NewTestPoint([]int{0, 2}, []int{0, 2}),
+					service.NewTestPoint([]int32{0, 1}, []int32{0}),
+					service.NewTestPoint([]int32{2}, []int32{2}),
+					service.NewTestPoint([]int32{3}, []int32{3}),
+					service.NewTestPoint([]int32{0, 2}, []int32{0, 2}),
 				},
 				GradeScale: service.GradeScale{
 					ExcellentLowerBound:    75,
@@ -53,11 +53,11 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 			Name: "good_grade_when_better_than_lower_bound",
 			Attempt: service.Attempt{
 				TestPoints: []service.TestPoint{
-					service.NewTestPoint([]int{1, 3}, []int{1, 3}),
-					service.NewTestPoint([]int{0}, []int{1}),
-					service.NewTestPoint([]int{2, 3}, []int{2, 4}),
-					service.NewTestPoint([]int{1}, []int{1}),
-					service.NewTestPoint([]int{3}, []int{3}),
+					service.NewTestPoint([]int32{1, 3}, []int32{1, 3}),
+					service.NewTestPoint([]int32{0}, []int32{1}),
+					service.NewTestPoint([]int32{2, 3}, []int32{2, 4}),
+					service.NewTestPoint([]int32{1}, []int32{1}),
+					service.NewTestPoint([]int32{3}, []int32{3}),
 				},
 				GradeScale: service.GradeScale{
 					ExcellentLowerBound:    90,
@@ -74,11 +74,11 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 			Name: "satisfactory_grade_when_better_than_lower_bound",
 			Attempt: service.Attempt{
 				TestPoints: []service.TestPoint{
-					service.NewTestPoint([]int{0}, []int{0}),
-					service.NewTestPoint([]int{1, 0}, []int{0, 1}),
-					service.NewTestPoint([]int{2}, []int{3, 2}),
-					service.NewTestPoint([]int{1}, []int{2}),
-					service.NewTestPoint([]int{0}, []int{2}),
+					service.NewTestPoint([]int32{0}, []int32{0}),
+					service.NewTestPoint([]int32{1, 0}, []int32{0, 1}),
+					service.NewTestPoint([]int32{2}, []int32{3, 2}),
+					service.NewTestPoint([]int32{1}, []int32{2}),
+					service.NewTestPoint([]int32{0}, []int32{2}),
 				},
 				GradeScale: service.GradeScale{
 					ExcellentLowerBound:    80,
@@ -95,12 +95,12 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 			Name: "unsatisfactory_when_worse_than_satisfactory_lower_bound",
 			Attempt: service.Attempt{
 				TestPoints: []service.TestPoint{
-					service.NewTestPoint([]int{1}, []int{1}),
-					service.NewTestPoint([]int{2}, []int{3}),
-					service.NewTestPoint([]int{4}, []int{5}),
-					service.NewTestPoint([]int{0}, []int{5}),
-					service.NewTestPoint([]int{1}, []int{2}),
-					service.NewTestPoint([]int{1}, []int{3, 4}),
+					service.NewTestPoint([]int32{1}, []int32{1}),
+					service.NewTestPoint([]int32{2}, []int32{3}),
+					service.NewTestPoint([]int32{4}, []int32{5}),
+					service.NewTestPoint([]int32{0}, []int32{5}),
+					service.NewTestPoint([]int32{1}, []int32{2}),
+					service.NewTestPoint([]int32{1}, []int32{3, 4}),
 				},
 				GradeScale: service.GradeScale{
 					ExcellentLowerBound:    90,

@@ -13,20 +13,28 @@ type GradeScale struct {
 	SatisfactoryLowerBound int
 }
 
+func NewGradeScale(excellentLowerBound, goodLowerBound, satisfactoryLowerBound int32) GradeScale {
+	return GradeScale{
+		ExcellentLowerBound:    int(excellentLowerBound),
+		GoodLowerBound:         int(goodLowerBound),
+		SatisfactoryLowerBound: int(satisfactoryLowerBound),
+	}
+}
+
 type TestPoint struct {
 	correctVariantNumbers map[int]bool
 	chosenVariantNumbers  map[int]bool
 }
 
-func NewTestPoint(correctVariantNumbers, chosenVariantNumbers []int) TestPoint {
+func NewTestPoint(correctVariantNumbers, chosenVariantNumbers []int32) TestPoint {
 	correct := make(map[int]bool, len(correctVariantNumbers))
 	for _, n := range correctVariantNumbers {
-		correct[n] = true
+		correct[int(n)] = true
 	}
 
 	chosen := make(map[int]bool, len(chosenVariantNumbers))
 	for _, n := range chosenVariantNumbers {
-		chosen[n] = true
+		chosen[int(n)] = true
 	}
 
 	return TestPoint{
