@@ -18,11 +18,7 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 		{
 			Name: "no_grade_when_empty_test_points",
 			Attempt: service.Attempt{
-				GradeScale: service.GradeScale{
-					ExcellentLowerBound:    75,
-					GoodLowerBound:         50,
-					SatisfactoryLowerBound: 25,
-				},
+				GradeScale: service.NewGradeScale(75, 50, 25),
 			},
 			AttemptCheckingResult: service.AttemptCheckingResult{
 				Grade:   service.NoGrade,
@@ -38,11 +34,7 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 					service.NewTestPoint([]int32{3}, []int32{3}),
 					service.NewTestPoint([]int32{0, 2}, []int32{0, 2}),
 				},
-				GradeScale: service.GradeScale{
-					ExcellentLowerBound:    75,
-					GoodLowerBound:         60,
-					SatisfactoryLowerBound: 30,
-				},
+				GradeScale: service.NewGradeScale(75, 60, 30),
 			},
 			AttemptCheckingResult: service.AttemptCheckingResult{
 				Grade:   service.Excellent,
@@ -59,11 +51,7 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 					service.NewTestPoint([]int32{1}, []int32{1}),
 					service.NewTestPoint([]int32{3}, []int32{3}),
 				},
-				GradeScale: service.GradeScale{
-					ExcellentLowerBound:    90,
-					GoodLowerBound:         60,
-					SatisfactoryLowerBound: 40,
-				},
+				GradeScale: service.NewGradeScale(90, 60, 40),
 			},
 			AttemptCheckingResult: service.AttemptCheckingResult{
 				Grade:   service.Good,
@@ -80,11 +68,7 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 					service.NewTestPoint([]int32{1}, []int32{2}),
 					service.NewTestPoint([]int32{0}, []int32{2}),
 				},
-				GradeScale: service.GradeScale{
-					ExcellentLowerBound:    80,
-					GoodLowerBound:         60,
-					SatisfactoryLowerBound: 40,
-				},
+				GradeScale: service.NewGradeScale(80, 60, 40),
 			},
 			AttemptCheckingResult: service.AttemptCheckingResult{
 				Grade:   service.Satisfactory,
@@ -102,11 +86,7 @@ func TestCheckAttemptToPassTestingTask(t *testing.T) {
 					service.NewTestPoint([]int32{1}, []int32{2}),
 					service.NewTestPoint([]int32{1}, []int32{3, 4}),
 				},
-				GradeScale: service.GradeScale{
-					ExcellentLowerBound:    90,
-					GoodLowerBound:         50,
-					SatisfactoryLowerBound: 18,
-				},
+				GradeScale: service.NewGradeScale(90, 50, 18),
 			},
 			AttemptCheckingResult: service.AttemptCheckingResult{
 				Grade:   service.Unsatisfactory,

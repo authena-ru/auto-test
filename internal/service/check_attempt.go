@@ -8,16 +8,16 @@ type Attempt struct {
 }
 
 type GradeScale struct {
-	ExcellentLowerBound    int
-	GoodLowerBound         int
-	SatisfactoryLowerBound int
+	excellentLowerBound    int
+	goodLowerBound         int
+	satisfactoryLowerBound int
 }
 
 func NewGradeScale(excellentLowerBound, goodLowerBound, satisfactoryLowerBound int32) GradeScale {
 	return GradeScale{
-		ExcellentLowerBound:    int(excellentLowerBound),
-		GoodLowerBound:         int(goodLowerBound),
-		SatisfactoryLowerBound: int(satisfactoryLowerBound),
+		excellentLowerBound:    int(excellentLowerBound),
+		goodLowerBound:         int(goodLowerBound),
+		satisfactoryLowerBound: int(satisfactoryLowerBound),
 	}
 }
 
@@ -73,15 +73,15 @@ func evaluate(percent int, gradeScale GradeScale) Grade {
 		return NoGrade
 	}
 
-	if percent >= gradeScale.ExcellentLowerBound {
+	if percent >= gradeScale.excellentLowerBound {
 		return Excellent
 	}
 
-	if percent >= gradeScale.GoodLowerBound {
+	if percent >= gradeScale.goodLowerBound {
 		return Good
 	}
 
-	if percent >= gradeScale.SatisfactoryLowerBound {
+	if percent >= gradeScale.satisfactoryLowerBound {
 		return Satisfactory
 	}
 
