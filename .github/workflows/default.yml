@@ -37,4 +37,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Unit tests
-        run: go test --short -cover ./...
+        run: make cover
+
+      - name: Uppload code coverage
+        uses: codecov/codecov-action@v1
